@@ -9,12 +9,12 @@
   </ul>
   <ul *ngFor="let group of arr; index as i" class="p-20p">
     <li *ngFor="let item of group.items; index as j">
-      <div class="d-flex justify-content-between">
+      <div class="d-flex justify-content-between head-txt-cp">
         <i class="cursor-pointer  mx-2 p-r-20 f-s-20" aria-hidden="true"
           [ngClass]="!item.expand ? 'fa fa-plus-square' : 'fa fa-minus-square'"
           (click)="item.expand = !item.expand"></i>
         <span class="cursor-pointer   mx-2 p-r-20 parent-name" (click)="item.expand = !item.expand">{{item.name}}</span>
-        <span class="cursor-pointer   ml-auto p-r-40" (click)="item.expand = !item.expand">{{item.total}}</span>
+        <span class="cursor-pointer   ml-auto p-r-40" (click)="item.expand = !item.expand">{{item.total |currency}}</span>
       </div>
 
       <ul *ngIf="item.expand">
@@ -28,7 +28,7 @@
                 (click)="checkChild(i, j, k)">{{child.name}}</span>
             </div>
               <span class="cursor-pointer    p-r-20 ">{{child.description}}</span>
-              <span class="cursor-pointer    p-r-40">{{item.total}}</span>
+              <span class="cursor-pointer    p-r-40">{{item.total |currency}}</span>
           </div>
 
           <ul *ngIf=child.expand>
@@ -40,8 +40,8 @@
                   </i>
                   <span class="cursor-pointer   mx-2 p-r-200" (click)="checkSubChild(i,j,k,x)">{{subChild.name}}</span>
                 </div>
-                <span class="cursor-pointer    p-r-20 ">{{subChild.description}}</span>
-                <span class="cursor-pointer    p-r-40">{{subChild.total}}</span>
+                <span class="cursor-pointer   ">{{subChild.description}}</span>
+                <span class="cursor-pointer    ">{{subChild.total |currency }}</span>
               </div>
               
               <ul *ngIf="subChild.expand">

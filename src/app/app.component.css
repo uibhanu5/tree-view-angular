@@ -46,6 +46,10 @@ ul {
 }
 
 .head-txt {
-      border-bottom: 1px solid black;
+    
     background-color: azure;
+}
+
+.head-txt-cp{
+border-bottom: 1px solid black;
 }
