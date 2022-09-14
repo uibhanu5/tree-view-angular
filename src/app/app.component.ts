@@ -6,7 +6,6 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-  listChildChanged = [];
   arr = [
     {
       id: "group_1",
@@ -14,210 +13,129 @@ export class AppComponent {
       items: [
         {
           id: "group_1.abc",
-          name: "Parent1",
-          // checked: false,
+          name: "Tenet HealthCare Corporation",
+          total: 10183736,
           expand: false,
           childs: [
             {
               id: "group_1.abc.action_See_List",
-              name: "See List",
-              //  checked: false,
+              name: "UN2N2",
+              total: 1263673,
+              description: "FIAM ITM INF-PR BD D $585112 F FPRS",
               expand: false,
               subChilds: [
                 {
-                  id: 'group_1.abc.action_See_List_List1',
-                  name: 'List1',
-                  //  checked: false,
+                  id: "group_1.abc.action_See_List_List1",
+                  name: "UN2N3",
+                  total: 1263673,
+                  description: "FIAM ITM INF-PR BD D $585112",
                   expand: false,
                   sub_Childs: [
                     {
-                      id: 'group_1.abc.action_See_List_List1',
-                      name: 'List1',
-                      //checked: false,
+                      id: "group_1.abc.action_See_List_List1",
+                      name: "UN2N3",
+                      total: 1263673,
+                      description: "FIAM ITM INF-PR BD D $585112",
                       expand: false,
                     },
                     {
-                      id: 'group_1.abc.action_See_List_List1',
-                      name: 'List1',
-                      // checked: false,
+                      id: "group_1.abc.action_See_List_List1",
+                      name: "UN2N3",
+                      total: 1263673,
+                      description: "FIAM ITM INF-PR BD D $585112",
                       expand: false,
-                    }
-                  ]
+                    },
+                  ],
                 },
                 {
-                  id: 'group_1.abc.action_See_List_List2',
-                  name: 'List2',
-                  //  checked: false,
+                  id: "group_1.abc.action_See_List_List2",
+                  name: "UN2N3",
+                  total: 1263673,
+                  description: "FIAM ITM INF-PR BD D $585112",
                   expand: false,
                   sub_Childs: [
                     {
-                      id: 'group_1.abc.action_See_List_List1',
-                      name: 'List1',
-                      // checked: false,
+                      id: "group_1.abc.action_See_List_List1",
+                      name: "UN2N3",
+                      total: 1263673,
+                      description: "FIAM ITM INF-PR BD D $585112",
                       expand: false,
                     },
                     {
-                      id: 'group_1.abc.action_See_List_List1',
-                      name: 'List1',
-                      // checked: false,
+                      id: "group_1.abc.action_See_List_List1",
+                      name: "UN2N3",
+                      total: 1263673,
+                      description: "FIAM ITM INF-PR BD D $585112",
                       expand: false,
-                    }
-                  ]
+                    },
+                  ],
                 },
-
-              ]
+              ],
             },
             {
-              id: "group_1.abc.action_Edit",
-              name: "Edit",
-              //  checked: false,
+              id: "group_1.abc.action_See_List",
+              name: "UN2N3",
+              total: 1263673,
+              description: "FIAM ITM INF-PR BD D $585112 F FPRS",
               expand: false,
               subChilds: [
                 {
-                  id: 'group_1.abc.action_Edit_List1',
-                  name: 'List1',
-                  //      checked: false,
+                  id: "group_1.abc.action_See_List_List1",
+                  name: "UN2N633",
+                  total: 12638673,
+                  description: "FIAM ITM INF-PR BD D $585112",
                   expand: false,
                   sub_Childs: [
                     {
-                      id: 'group_1.abc.action_See_List_List1',
-                      name: 'List1',
-                      //        checked: false,
+                      id: "group_1.abc.action_See_List_List1",
+                      name: "UN2N837",
+                      total: 873629,
+                      description: "FIAM ITM INF-PR BD D $585112",
                       expand: false,
                     },
                     {
-                      id: 'group_1.abc.action_See_List_List1',
-                      name: 'List1',
-                      //        checked: false,
+                      id: "group_1.abc.action_See_List_List1",
+                      name: "UN2N3",
+                      total: 1263673,
+                      description: "FIAM ITM INF-PR BD D $585112",
                       expand: false,
-                    }
-                  ]
+                    },
+                  ],
                 },
                 {
-                  id: 'group_1.abc.action_Edit_List2',
-                  name: 'List2',
-                  //     checked: false,
+                  id: "group_1.abc.action_See_List_List2",
+                  name: "UN2N3",
+                  total: 1263673,
+                  description: "FIAM ITM INF-PR BD D $585112",
                   expand: false,
                   sub_Childs: [
                     {
-                      id: 'group_1.abc.action_See_List_List1',
-                      name: 'List1',
-                      // checked: false,
+                      id: "group_1.abc.action_See_List_List1",
+                      name: "UN2N3",
+                      total: 1263673,
+                      description: "FIAM ITM INF-PR BD D $585112",
                       expand: false,
                     },
                     {
-                      id: 'group_1.abc.action_See_List_List1',
-                      name: 'List1',
-                      // checked: false,
-                      expand: false,
-                    }
-                  ]
-                },
-              ]
-
-            },
-            {
-              id: "group_1.abc.action_Delete",
-              name: "Delete",
-              // checked: false,
-              expand: false,
-              subChilds: [
-                {
-                  id: 'group_1.abc.action_Delete_List1',
-                  name: 'List1',
-                  // checked: false,
-                  expand: false,
-                  sub_Childs: [
-                    {
-                      id: 'group_1.abc.action_See_List_List1',
-                      name: 'List1',
-                      //  checked: false,
+                      id: "group_1.abc.action_See_List_List1",
+                      name: "UN2N3",
+                      total: 1263673,
+                      description: "FIAM ITM INF-PR BD D $585112",
                       expand: false,
                     },
-                    {
-                      id: 'group_1.abc.action_See_List_List1',
-                      name: 'List1',
-                      // checked: false,
-                      expand: false,
-                    }
-                  ]
+                  ],
                 },
-                {
-                  id: 'group_1.abc.action_Delete_List2',
-                  name: 'List2',
-                  // checked: false,
-                  expand: false,
-                  sub_Childs: [
-                    {
-                      id: 'group_1.abc.action_See_List_List1',
-                      name: 'List1',
-                      // checked: false,
-                      expand: false,
-                    },
-                    {
-                      id: 'group_1.abc.action_See_List_List1',
-                      name: 'List1',
-                      //  checked: false,
-                      //expand: true,
-                    }
-                  ]
-                },
-              ]
-            },
-            {
-              id: "group_1.abc.action_Print",
-              name: "Print",
-              //  checked: false,
-              expand: false,
-              subChilds: [
-                {
-                  id: 'group_1.abc.action_Print_List1',
-                  name: 'List1',
-                  //  checked: false,
-                  expand: false,
-                  sub_Childs: [
-                    {
-                      id: 'group_1.abc.action_See_List_List1',
-                      name: 'List1',
-                      //  checked: false,
-                      expand: false,
-                    },
-                    {
-                      id: 'group_1.abc.action_See_List_List1',
-                      name: 'List1',
-                      //  checked: false,
-                      expand: false,
-                    }
-                  ]
-                },
-                {
-                  id: 'group_1.abc.action_Print_List2',
-                  name: 'List2',
-                  // checked: false,
-                  expand: false,
-                  sub_Childs: [
-                    {
-                      id: 'group_1.abc.action_See_List_List1',
-                      name: 'List1',
-                      //  checked: false,
-                      expand: false,
-                    },
-                    {
-                      id: 'group_1.abc.action_See_List_List1',
-                      name: 'List1',
-                      //  checked: false,
-                      expand: false,
-                    }
-                  ]
-                },
-              ]
+              ],
             },
           ],
-        }
+        },
       ],
     },
   ];
 
+  constructor() {}
+
+  ngOnInit() {}
 
   checkChild(group_i, parent_i, i) {
     this.arr[group_i].items[parent_i].childs[i].expand =
