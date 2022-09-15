@@ -1,34 +1,36 @@
 <div class="main">
   <ul class="p-20p">
     <li>
-      <div class=" head-txt d-flex justify-content-between">
-        <span class="mx-2 p-r-20" >Client</span>
-        <span class="ml-auto p-r-40">Total</span>
+      <div class="head-txt d-flex justify-content-between">
+        <span class="mx-2 p-r-20">Client</span>
+        <span class="ml-auto 0">Total</span>
       </div>
     </li>
   </ul>
   <ul *ngFor="let group of arr; index as i" class="p-20p">
     <li *ngFor="let item of group.items; index as j">
       <div class="d-flex justify-content-between head-txt-cp">
-        <i class="cursor-pointer  mx-2 p-r-20 f-s-20" aria-hidden="true"
-          [ngClass]="!item.expand ? 'fa fa-plus-square' : 'fa fa-minus-square'"
-          (click)="item.expand = !item.expand"></i>
-        <span class="cursor-pointer   mx-2 p-r-20 parent-name" (click)="item.expand = !item.expand">{{item.name}}</span>
-        <span class="cursor-pointer   ml-auto p-r-40" (click)="item.expand = !item.expand">{{item.total |currency}}</span>
+        <div>
+          <i class="cursor-pointer  mx-2  f-s-20" aria-hidden="true"
+            [ngClass]="!item.expand ? 'fa fa-plus-square' : 'fa fa-minus-square'"
+            (click)="item.expand = !item.expand"></i>
+          <span class="cursor-pointer   mx-2  parent-name" (click)="item.expand = !item.expand">{{item.name}}</span>
+        </div>
+
+        <span class="cursor-pointer   ml-auto " (click)="item.expand = !item.expand">{{item.total |currency}}</span>
       </div>
 
       <ul *ngIf="item.expand">
         <li *ngFor="let child of item.childs; index as k">
           <div class="d-flex justify-content-between">
             <div>
-              <i class="cursor-pointer  mx-2 p-r-20 f-s-20" aria-hidden="true"
+              <i class="cursor-pointer  mx-2  f-s-20" aria-hidden="true"
                 [ngClass]="!child.expand ? 'fa fa-plus-square' : 'fa fa-minus-square'" (click)="checkChild(i, j, k)">
               </i>
-              <span class="cursor-pointer  mx-2 p-r-20" aria-hidden="true"
-                (click)="checkChild(i, j, k)">{{child.name}}</span>
+              <span class="cursor-pointer  mx-2 " aria-hidden="true" (click)="checkChild(i, j, k)">{{child.name}}</span>
             </div>
-              <span class="cursor-pointer    p-r-20 ">{{child.description}}</span>
-              <span class="cursor-pointer    p-r-40">{{item.total |currency}}</span>
+            <span class="cursor-pointer    p-r-20 ">{{child.description}}</span>
+            <span class="cursor-pointer    p-r-40">{{item.total |currency}}</span>
           </div>
 
           <ul *ngIf=child.expand>
@@ -36,20 +38,40 @@
               <div class="d-flex justify-content-between">
                 <div>
                   <i class="cursor-pointer  mx-2 p-r-20 f-s-20" aria-hidden="true"
-                    [ngClass]="!subChild.expand? 'fa fa-plus-square' : 'fa fa-minus-square' " (click)="checkSubChild(i,j,k,x)">
+                    [ngClass]="!subChild.expand? 'fa fa-plus-square' : 'fa fa-minus-square' "
+                    (click)="checkSubChild(i,j,k,x)">
                   </i>
                   <span class="cursor-pointer   mx-2 p-r-200" (click)="checkSubChild(i,j,k,x)">{{subChild.name}}</span>
                 </div>
                 <span class="cursor-pointer   ">{{subChild.description}}</span>
                 <span class="cursor-pointer    ">{{subChild.total |currency }}</span>
               </div>
-              
+
               <ul *ngIf="subChild.expand">
                 <li *ngFor=" let sub_child of subChild.sub_Childs; index as y">
-                  <i class="cursor-pointer  mx-2 p-r-20 f-s-20" aria-hidden="true"
-                    [ngClass]="!sub_child.expand? 'fa fa-plus-square' : 'fa fa-minus-square' ">
-                  </i>
-                  <span class="cursor-pointer  mx-2 p-r-200">{{sub_child.name}}</span>
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <i class="cursor-pointer  mx-2 p-r-20 f-s-20" aria-hidden="true"
+                        [ngClass]="!showData? 'fa fa-plus-square' : 'fa fa-minus-square' " (click)="checklastChild()">
+                      </i>
+                      <span class="cursor-pointer  mx-2 p-r-200">{{sub_child.name}}</span>
+                    </div>
+                    <span class="cursor-pointer   ">{{sub_child.description}}</span>
+                    <span class="cursor-pointer    ">{{sub_child.total |currency }}</span>
+                  </div>
+
+                  <div *ngIf="showData" style="margin-left: 60px;">
+                    <li *ngFor="let data of sub_child.data">
+                      <div class="d-flex justify-content-between">
+                        <div>
+                          <span class="cursor-pointer  mx-2 p-r-200">{{data.name}}</span>
+                        </div>
+                        <span class="cursor-pointer   ">{{data.description}}</span>
+                        <span class="cursor-pointer    ">{{data.total |currency }}</span>
+                      </div>
+                    </li>
+                  </div>
+                 
                 </li>
               </ul>
             </li>
